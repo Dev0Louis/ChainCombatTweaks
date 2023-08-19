@@ -41,7 +41,7 @@ public abstract class TweakedPlayerMixin extends PlayerEntity implements Tweaked
     public void killPlayer(CallbackInfo ci) {
         //Don't kill the player if the Server is stopping
         if(this.chainCombatSystem$isImmuneToCombatLog())return;
-        this.kill();
+        if(this.chainCombatSystem$isInCombat())this.kill();
     }
 
     @Inject(method = "tick", at = @At("RETURN"))
@@ -59,6 +59,7 @@ public abstract class TweakedPlayerMixin extends PlayerEntity implements Tweaked
 
     @Inject(method = "onDeath", at = @At("HEAD"))
     public void clearBossBarOnDeath(DamageSource damageSource, CallbackInfo ci) {
+        if(this.combatBossBar == null)return;
         this.combatBossBar.removePlayer((ServerPlayerEntity) (Object) this);
     }
 
