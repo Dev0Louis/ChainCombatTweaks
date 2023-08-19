@@ -74,9 +74,9 @@ public abstract class TweakedPlayerMixin extends PlayerEntity implements Tweaked
     @Inject(method = "damage", at = @At("RETURN"))
     public void setPlayerInCombatOnDamage(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         var attacker = source.getAttacker();
-        if(source.getAttacker() instanceof ServerPlayerEntity playerTarget &&
+        if(((Object)this) instanceof ServerPlayerEntity player &&
                         attacker instanceof ServerPlayerEntity serverPlayerAttacker) {
-            playerTarget.chainCombatSystem$setCombatTicks(ChainCombatTweaks.COMBAT_TICKS);
+            player.chainCombatSystem$setCombatTicks(ChainCombatTweaks.COMBAT_TICKS);
             serverPlayerAttacker.chainCombatSystem$setCombatTicks(ChainCombatTweaks.COMBAT_TICKS);
 
             BlockPos.stream(this.getBoundingBox().stretch(1,1,1)).forEach(blockPos -> {
