@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.louis.chaincombattweaks.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "EndCrystalEntityMixin",
+    "EnderPearlEntityMixin",
+    "FreezingSnowballEntityMixin",
+    "NoInstantDamageArrowMixin",
+    "PlayerManagerMixin",
+    "TridentItemMixin",
+    "TweakedPlayerMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

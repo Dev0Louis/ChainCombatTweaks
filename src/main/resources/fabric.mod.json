@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "chaincombattweaks",
+  "version": "${version}",
+  "name": "ChainCombatTweaks",
+  "description": "COMBAT!!!",
+  "authors": [
+    "Dev0Louis"
+  ],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.louis.chaincombattweaks.ChainCombatTweaks"
+    ]
+  },
+  "mixins": [
+    "ChainCombatSystem.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.12",
+    "fabric": "*",
+    "minecraft": ">=1.20.1"
+  },
+  "custom": {
+    "loom:injected_interfaces": {
+      "net/minecraft/class_3222": ["dev/louis/chaincombattweaks/api/TweakedPlayer"]
+    }
+  }
+}
