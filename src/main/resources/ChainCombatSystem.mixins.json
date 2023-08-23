@@ -9,6 +9,7 @@
     "FreezingSnowballEntityMixin",
     "NoInstantDamageArrowMixin",
     "PlayerManagerMixin",
+    "TntMinecartEntityMixin",
     "TridentItemMixin",
     "TweakedPlayerMixin"
   ],

@@ -14,10 +14,6 @@ import net.minecraft.util.ActionResult;
 import java.util.List;
 
 public class ChainCombatTweaks implements ModInitializer {
-
-    //TODO: Merge Combat Logic here.
-    //TODO: Remove Cooldown stuff and make everything based on a setCombat method or something like that.
-
     public static final List<Item> COMBAT_DISABLED_ITEMS = List.of(Items.TRIDENT, Items.ENDER_PEARL);
     public static final int COMBAT_TICKS = 30*20;
     @Override
