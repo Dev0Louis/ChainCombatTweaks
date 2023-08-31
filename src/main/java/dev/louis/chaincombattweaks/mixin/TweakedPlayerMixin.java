@@ -108,6 +108,7 @@ public abstract class TweakedPlayerMixin extends PlayerEntity implements Tweaked
 
     @Override
     public void takeShieldHit(LivingEntity attacker) {
+        super.takeShieldHit(attacker);
         if (attacker instanceof ServerPlayerEntity attackerPlayer && attackerPlayer.chainCombatSystem$shouldStealShield()){
             attacker.getMainHandStack().damage(78, attacker, p -> p.sendToolBreakStatus(attacker.getActiveHand()));
             this.chainCombatSystem$stealShield(attacker);
